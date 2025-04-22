@@ -1,0 +1,20 @@
+Real-Time Face Mask Detection
+Tech: OpenCV + TensorFlow/Keras
+Use case: IoT & security applications
+
+AI-Powered Attendance System (Face Recognition)
+Tech: FaceNet, Dlib, Streamlit
+Dataset: Custom or LFW (Labeled Faces in the Wild)
+
+Automatic Number Plate Recognition (ANPR)
+Tech: YOLOv8 + OCR (Tesseract)
+Use case: Smart city / transport automation
+
+Clothing Item Classification for E-Commerce
+Tech: CNN + Fashion MNIST / DeepFashion
+UI: Streamlit web app for prediction
+
+Visual Product Search (Reverse Image Search)
+Tech: ResNet + Image Embeddings + Faiss
+Upload image → find similar items in DB
+

@@ -1,0 +1,17 @@
+Supervised Learning (5 Projects)
+Credit Card Fraud Detection
+Dataset: Kaggle Credit Card Fraud
+Model: Logistic Regression, Random Forest, XGBoost
+
+Customer Churn Prediction for Telco
+End-to-end pipeline: EDA → Feature Engineering → Model Deployment
+
+House Price Prediction (Regression)
+Dataset: Ames Housing
+Tools: Sklearn, XGBoost, Streamlit App
+
+Medical Diagnosis (Diabetes Prediction)
+Use metrics like precision, recall, ROC-AUC to handle class imbalance
+
+Email Spam Classifier (Text Classification)
+Model: Naive Bayes, SVM, TF-IDF Vectorization

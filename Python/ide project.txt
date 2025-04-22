@@ -1,0 +1,78 @@
+🐍 PYTHON PROJECTS
+🔰 20 Beginner Projects
+BMI Calculator CLI
+
+To-do List dengan File Persistence (TXT/JSON)
+
+Currency Converter dengan API (Fixer.io)
+
+Random Password Generator
+
+Alarm Clock dengan datetime & playsound
+
+Simple Quiz Game
+
+Unit Converter (panjang, suhu, berat)
+
+Caesar Cipher Encryption
+
+Tic-Tac-Toe Game
+
+Dice Roller Simulator
+
+Weather App CLI (OpenWeatherMap API)
+
+YouTube Video Downloader (pytube)
+
+Basic Web Scraper (requests + BeautifulSoup)
+
+Email Sender CLI dengan smtplib
+
+Number Guessing Game
+
+PDF Merger Tool
+
+Expense Tracker dengan CSV
+
+Simple Markdown to HTML Converter
+
+Currency Trend Grapher dengan Matplotlib
+
+Pomodoro Timer dengan Tkinter
+
+🧭 10 Intermediate Projects
+Personal Finance Dashboard (Streamlit + Pandas)
+
+AI Chatbot dengan transformers dan GUI (Tkinter/Gradio)
+
+Flask-based Blog Platform
+
+Reddit Post Analyzer (API + Sentiment Analysis)
+
+Image Resizer & Compressor (Pillow + CLI)
+
+REST API dengan FastAPI (CRUD User Management)
+
+CSV Data Cleaner Utility
+
+Face Detection App dengan OpenCV
+
+Portfolio Website Generator (Markdown + Jinja2 + HTML)
+
+URL Shortener (Flask + SQLite)
+
+🚀 5 Advanced Projects
+End-to-End E-Commerce Analytics System
+Menggunakan FastAPI, PostgreSQL, dan Plotly Dash/Streamlit untuk menganalisis perilaku pembeli
+
+AI-Powered Resume Screener
+Upload resume → parser → skill extractor → match dengan job description (spacy + NLP)
+
+Custom LLM Fine-tuning App (LangChain + Ollama + Streamlit)
+Mini ChatGPT khusus untuk instruksi tertentu (sesuai dengan kebutuhan industri)
+
+Automated ETL Pipeline untuk Crypto Price Tracker (Airflow + PostgreSQL)
+Crawl → Clean → Store → Visualize
+
+AI Trading Signal Generator (Backtesting + Predictive Model + Dash UI)
+Menggunakan historical data + ML untuk prediksi tren pasar

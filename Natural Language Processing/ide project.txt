@@ -1,0 +1,16 @@
+AI Resume Parser & Job Matching
+Tech: SpaCy + Transformers
+Output: Skill extraction, match % with job descriptions
+
+Sentiment Analysis Dashboard for Twitter/Reddit
+Tech: Vader / BERT + Streamlit + API crawling
+
+Multi-language Chatbot (Translation + NLP)
+Tech: NLTK + Google Translate API + Flask
+
+Legal Document Classifier
+Use case: Classify contracts, T&C, etc.
+Tech: Scikit-learn + LDA Topic Modeling
+
+Fake News Detector
+Tech: TF-IDF + XGBoost / BERT Fine-Tuning

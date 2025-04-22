@@ -1,0 +1,29 @@
+1. Consumer Purchase Behavior – Exploratory Study
+Tingkat: Pemula
+Tools: Excel, Power BI / Google Data Studio
+Fokus: EDA, visualisasi tren, pivot table
+Nilai Tambah: Segmentasi pembeli dengan visualisasi heatmap dan donut chart interaktif.
+
+2. HR Analytics: Karyawan Resign & Predictive Turnover
+Tingkat: Menengah
+Tools: SQL, Tableau, Python (EDA)
+Fokus: Predictive attrition, KPI monitoring
+Nilai Tambah: Tambahkan simulasi: “apa yang terjadi jika benefit dinaikkan X%”.
+
+3. Retail Sales Performance Dashboard + Insight Storytelling
+Tingkat: Menengah
+Tools: Power BI, Python (pandas, matplotlib)
+Fokus: Dashboard visual + narasi insight
+Nilai Tambah: Sertakan bagian "CEO Executive Summary" berbasis insight.
+
+4. City Development Analysis using OpenStreetMap + Satellite Data
+Tingkat: Lanjut
+Tools: Python (GeoPandas, Folium), QGIS
+Fokus: Spasial analysis & urban growth trend
+Nilai Tambah: Visualisasi heatmap pertumbuhan wilayah per tahun.
+
+5. Data Journalism Project: Visualisasi Ketimpangan Pendidikan
+Tingkat: Lanjut
+Tools: D3.js, Observable, Python
+Fokus: Data storytelling publik
+Nilai Tambah: Buat narasi interaktif seperti The Pudding atau OurWorldInData.

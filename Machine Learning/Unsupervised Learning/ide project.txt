@@ -1,0 +1,15 @@
+ Unsupervised Learning (5 Projects)
+Customer Segmentation for E-Commerce
+Technique: K-Means, PCA, Silhouette Score
+
+Anomaly Detection in Network Traffic
+Using Isolation Forest and DBSCAN
+
+Movie Recommender System (Collaborative Filtering)
+KNN on user-item matrix, hybrid approach optional
+
+Topic Modeling for News Articles
+LDA, NMF, WordCloud Visualization
+
+Market Basket Analysis (Association Rules)
+Apriori, FP-Growth, Lift & Confidence Metrics

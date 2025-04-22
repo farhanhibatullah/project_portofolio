@@ -1,0 +1,29 @@
+COVID-19 Dashboard (Plotly Dash or Streamlit)
+Live updates from API, time-series charts
+
+Netflix Movie Analysis Dashboard
+Genre breakdown, year trends, word cloud
+
+Airbnb Price Heatmap (Folium + Seaborn)
+Geospatial data visualization
+
+Survey Result Visualization with Plotly
+Likert scale heatmaps, demographic bar charts
+
+Interactive Sales Dashboard (Streamlit + Altair)
+Dropdown filters, KPI cards
+
+Global CO2 Emission Over Time (Line/Area/Map Plot)
+Using pandas, plotly, geopandas
+
+Music Genre Popularity by Year (Spotify Dataset)
+Multiline chart, stacked area chart
+
+NBA Player Performance Radar Chart
+Matplotlib custom polar plots
+
+Flight Delay Analysis with Animated Charts (Plotly Express)
+Animation frames per month/year
+
+Startup Funding Trends Dashboard (India/US)
+Filters by sector, funding type, state

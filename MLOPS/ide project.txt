@@ -1,0 +1,27 @@
+End-to-End ML Pipeline with Kubeflow
+Dataset → Preprocessing → Model → Deployment on Kubernetes
+
+CI/CD for Machine Learning with GitHub Actions & MLflow
+Train model → track metrics → auto-deploy best model
+
+Model Registry and Versioning System
+Tech: MLflow Registry, custom tagging, rollback logic
+
+Drift Detection and Auto Retraining Pipeline
+Dataset: Fraud detection / customer churn
+Monitor data and concept drift (EvidentlyAI)
+
+Serving Multiple Models with FastAPI + Docker + NGINX Reverse Proxy
+
+AutoML Pipeline (Hyperparameter Tuning + Retraining)
+Tech: Optuna + MLflow + Prefect
+
+Real-Time Inference with Kafka Streaming
+Use Kafka topics for data input → FastAPI model inference
+
+Feature Store Implementation with Feast
+Centralize and reuse features across pipelines
+
+Monitoring System for Model Performance (Prometheus + Grafana)
+
+Secure ML Deployment (OAuth2, Rate Limit, Model Access Log)

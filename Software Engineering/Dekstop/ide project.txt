@@ -1,0 +1,13 @@
+Desktop Apps (6 Projects)
+
+Inventory Management System (PyQt / Electron)
+
+Video Editor (Trimming + Filters + Export)
+
+PDF Toolkit (Merge, Split, Compress)
+
+Mind Mapping Tool
+
+Local AI Assistant (LLM-Powered)
+
+Offline Resume Builder with Templates

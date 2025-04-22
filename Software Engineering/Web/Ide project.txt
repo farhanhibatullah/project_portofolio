@@ -1,0 +1,17 @@
+Web Apps (8 Projects)
+
+Freelancer Marketplace (Clone of Upwork)
+
+E-Commerce Store with Admin Dashboard
+
+Real-Time Chat App with WebSockets
+
+Crypto Price Tracker with Alerts
+
+AI Resume Analyzer Web App
+
+Online Voting System (React + Firebase)
+
+Recipe Sharing App with Image Upload & Search
+
+Blog CMS with Markdown Editor + Rich Text Editor

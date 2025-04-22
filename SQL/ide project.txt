@@ -1,0 +1,75 @@
+SQL PROJECTS
+🔰 20 Beginner Projects
+Create and Query a Bookstore Database
+
+Basic Movie Database with Joins
+
+Simple HR Database (Employees, Departments, Salaries)
+
+Student Grades Tracker
+
+Sales Record Management (with SUM, COUNT, GROUP BY)
+
+Library System: Borrowed Books Log
+
+Restaurant Orders (JOIN customers + orders)
+
+Create a Music Database (Artists, Albums, Tracks)
+
+E-Commerce Order Summary
+
+Hotel Booking System (Check-in/Out Analysis)
+
+Flight Database (Cities, Airlines, Routes)
+
+Soccer Match Database (Teams, Results, Scores)
+
+Bike Rental Database
+
+Online Courses Enrollment
+
+Supermarket Inventory System
+
+Basic Banking Transactions DB
+
+Product Reviews and Ratings System
+
+Simple Survey Result Analyzer
+
+Subscription Service Database
+
+Cinema Booking System
+
+🧭 10 Intermediate Projects
+Retail Sales Analysis (using GROUP BY, CASE, HAVING)
+
+Customer Lifetime Value (CLTV) Analysis
+
+User Churn Detection from Subscription DB
+
+Dashboard Query Backend: KPI Tables
+
+Normalize a Messy Dataset (3NF)
+
+Query Optimization Challenge
+
+Log Analyzer: Website Visit Paths
+
+Campaign Effectiveness (Pre & Post Analysis)
+
+Building a Data Warehouse Star Schema
+
+Sales Funnel Drop-off Rate Analysis
+
+🚀 5 Advanced Projects
+Design and Query a Data Warehouse for Online Marketplace
+Star schema: Orders, Products, Customers, Time
+
+Advanced SQL Dashboard Backend for Supply Chain KPIs
+Complex nested queries for on-time delivery, inventory turnover
+
+Event-Based Analytics (Clickstream SQL) Session ID logic, funnels, user journey mapping
+
+Real-Time Analytics with PostgreSQL + TimescaleDB IoT-like sensor dataset with live metrics
+
+SQL Case Study: Fraud Detection Engine Rules-based flagging, anomaly score calculation using SQL only

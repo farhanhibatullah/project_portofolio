@@ -1,0 +1,13 @@
+Scalable ML Model Deployment on AWS ECS (Docker + CloudWatch)
+Full CI/CD → autoscale on traffic
+
+Serverless AI App with AWS Lambda + API Gateway
+Lightweight inference + event-driven triggers
+
+Data Lakehouse Pipeline using AWS S3 + Glue + Athena + QuickSight
+Raw → Curated → Dashboard
+
+End-to-End MLOps on GCP (Vertex AI + BigQuery + Cloud Run)
+
+Hybrid Cloud Deployment of AI App (Kubernetes with GCP + On-Prem)
+Multi-cloud failover + secrets management

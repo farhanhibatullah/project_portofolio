@@ -1,0 +1,14 @@
+Custom LLM Fine-Tuning and Deployment (e.g., LLaMA2, Mistral)
+Train small LLM for specific domain → serve with vLLM or Text Generation Inference
+
+Build LangChain-based RAG System
+Usecase: PDF QA bot / internal knowledge base assistant
+
+Voice Cloning App Using Pretrained Models
+Text-to-speech + voice embedding + streaming audio
+
+AI Agentic Workflow Engine (Multi-Agent System)
+Use CrewAI / AutoGen to coordinate LLM agents for tasks like data extraction + summarization + reporting
+
+Neural Search System with VectorDB (e.g., FAISS, Weaviate)
+RAG + semantic search across internal documents

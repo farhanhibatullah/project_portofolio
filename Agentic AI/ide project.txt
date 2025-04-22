@@ -1,0 +1,125 @@
+15 PROYEK AGENTIC AI — TINGKAT PEMULA
+
+Email Sorting Assistant
+Otomatis klasifikasikan email penting, spam, tugas, atau reminder.
+🧠 Tech Stack: LangChain + OpenAI + Streamlit
+
+Meeting Summary Generator
+Input transcript → output ringkasan poin-poin penting.
+🧠 Tech Stack: OpenAI + Whisper + LangChain
+
+PDF Chatbot (Ask Your Document)
+Agent yang menjawab pertanyaan dari isi PDF.
+🧠 Tech Stack: LangChain + FAISS + PyPDF2
+
+Daily News Summarizer Bot
+Ambil berita topik tertentu dan rangkumkan.
+🧠 Tech Stack: LangChain + SerpAPI + OpenAI
+
+Task Breakdown Assistant
+Masukkan tugas besar → output subtugas secara otomatis.
+🧠 Tech Stack: LangChain + GPT-4 + Streamlit
+
+Smart Study Agent
+Upload materi → sistem otomatis buatkan soal latihan.
+🧠 Tech Stack: LangChain + Pinecone + OpenAI
+
+Resume Optimizer Agent
+Input CV → sistem merevisi agar sesuai job post.
+🧠 Tech Stack: OpenAI + LangChain + Streamlit
+
+Simple Recipe Generator Bot
+Masukkan bahan, sistem buatkan resep masakan.
+🧠 Tech Stack: OpenAI API + LangChain
+
+Personalized Workout Coach
+User input goals → agent buatkan rencana latihan.
+🧠 Tech Stack: LangChain + GPT-3.5 + UI (Streamlit)
+
+Book Summary Generator Agent
+Masukkan ringkasan bab → output poin penting.
+🧠 Tech Stack: LangChain + Huggingface Transformers
+
+LinkedIn Post Writer Agent
+Masukkan topik → sistem buat draft post yang engaging.
+🧠 Tech Stack: LangChain + Prompt Templates
+
+Language Learning Assistant
+Belajar kosa kata baru lewat agent yang dinamis.
+🧠 Tech Stack: LangChain + OpenAI + Memory
+
+Self-Reflection Journal Agent
+Agent bantu refleksi harian berdasarkan input user.
+🧠 Tech Stack: LangChain + GPT-4 + local DB
+
+Simple Note Reorganizer Agent
+Masukkan notes acak → agent susun ulang secara rapi.
+🧠 Tech Stack: LangChain + GPT + Text Parser
+
+Q&A Agent for Company Policy
+Chatbot untuk menjawab kebijakan perusahaan.
+🧠 Tech Stack: LangChain + FAISS + Company Docs
+
+⚙️ 10 PROYEK AGENTIC AI — TINGKAT MENENGAH
+
+Multi-Agent Research Assistant
+Beberapa agent: pencari info, penyaring, penulis.
+🧠 Tech Stack: CrewAI / AutoGen + OpenAI + LangChain
+
+Job Application Agent
+Scrape job board → sesuaikan resume → kirim aplikasi.
+🧠 Tech Stack: Selenium + LangChain + Email API
+
+E-Commerce Product Advisor
+Agent bantu cari produk terbaik dari beberapa toko online.
+🧠 Tech Stack: LangChain + SerpAPI + Filtering Agent
+
+Content Planner Agent (Blog + SEO)
+Agent yang merancang kalender konten & riset keyword.
+🧠 Tech Stack: LangChain + SEO API + GPT-4
+
+Automated RAG System with Memory
+Agent menjawab + belajar dari interaksi sebelumnya.
+🧠 Tech Stack: LangGraph + FAISS + OpenAI + LangChain
+
+Project Planning Multi-Agent System
+Bagi tugas ke subagent: planner, estimator, scheduler.
+🧠 Tech Stack: CrewAI + LangChain
+
+AI Travel Agent (Flight, Hotel, Itinerary)
+Agent mengatur semua aspek perjalanan berdasarkan budget.
+🧠 Tech Stack: LangChain + API aggregator + OpenAI
+
+Academic Research Assistant Agent
+Baca jurnal → buatkan ringkasan, referensi, kutipan otomatis.
+🧠 Tech Stack: LangChain + Semantic Scholar API
+
+Auto-Email Responder + Scheduler
+Agent balas email, jadwalkan meeting otomatis.
+🧠 Tech Stack: LangChain + Gmail API + Google Calendar API
+
+AI Sales Assistant
+Agent bantu reply chat pelanggan, rekomendasi produk, follow-up.
+🧠 Tech Stack: LangChain + Web Chat + GPT-4 + CRM Integration
+
+🚀 5 PROYEK AGENTIC AI — TINGKAT LANJUT
+
+Agentic Data Analyst System
+Masukkan dataset → agent jalankan EDA → buat dashboard.
+🧠 Tech Stack: Pandas + LangChain Agents + Plotly + Streamlit
+
+Dynamic Multi-Agent Workflow Engine
+Agent menciptakan agent lain sesuai task baru yang muncul.
+🧠 Tech Stack: AutoGen + LangGraph + VectorDB
+
+AI Coding Assistant with Memory and Autonomy
+Seperti GitHub Copilot, tapi project-aware + persistent memory.
+🧠 Tech Stack: LangGraph + VS Code API + GPT-4
+
+AI Legal Assistant with Source Verification
+Agent bantu telusuri dan validasi hukum berdasarkan sumber asli.
+🧠 Tech Stack: RAG + VectorDB + Fact-check agent + LangChain
+
+AI Business Strategist
+Agent membaca data pasar, tren, laporan keuangan → buat strategi bisnis.
+🧠 Tech Stack: CrewAI + Web Scraper + PDF Agent + GPT-4 + Visualization

@@ -1,0 +1,72 @@
+
+Nama Proyek: AutoResearchAgent
+
+Deskripsi:
+Sebuah Agentic AI berbasis Python yang bisa menjalankan proses end-to-end research automation: dari merencanakan topik riset, mengumpulkan informasi dari web, menganalisis data, hingga membuat laporan hasil analisis secara otomatis — dan mampu memperbaiki alur kerja jika terjadi error selama proses.
+
+Use Case:
+Misalnya user ingin mencari:
+"Apa dampak ChatGPT terhadap produktivitas penulis konten digital?"
+
+Agent akan:
+1. Planning: Menyusun sub-topik dan sumber potensial
+2. Reasoning: Memilih sumber paling relevan, memverifikasi informasi
+3. Execution: Web scraping / API call, NLP processing, visualisasi data
+4. Reporting: Menyusun kesimpulan dan insight dalam format Markdown atau PDF
+5. Adapt: Jika gagal scrape, cari sumber lain. Jika error analisis, perbaiki atau ubah pendekatan.
+
+Arsitektur Modular:
+Berbasis LangGraph, CrewAI, atau custom state-machine:
+
+[User Prompt]
+     ↓
+[Planning Agent] → Buat rencana riset (topik, keyword, sumber)
+     ↓
+[Scraper Agent] → Ambil data (web/API/documents)
+     ↓
+[NLP/Reasoning Agent] → Ekstraksi informasi, analisis opini/data
+     ↓
+[Reporting Agent] → Tulis ringkasan, insight, rekomendasi
+     ↓
+[Error Handler Agent] → Monitor error, perbaiki dan retry
+
+Tech Stack:
+Komponen          | Tools
+------------------|------------------------------------------------------
+Framework Agent   | LangGraph, CrewAI, atau AutoGen
+Planning          | LangChain Planner / LLM Custom Prompt
+Execution         | Python + Selenium/Playwright, Requests, Pandas
+Reasoning/NLP     | OpenAI, Claude, atau Mistral LLM
+Reporting         | Markdown → PDF (reportlab, pweave)
+Error Recovery    | Try/Except + Logging + Self-Healing Retry Logic
+Storage           | JSON, SQLite, atau vector DB (e.g. FAISS)
+
+Contoh Workflow:
+
+# Planning Agent
+> "Topik: Dampak ChatGPT terhadap produktivitas penulis konten"
+→ Rencana:
+   - Kumpulkan artikel dari Google News & Reddit
+   - Analisis kata kunci produktivitas
+   - Buat ringkasan insight
+   - Visualisasi hasil opini
+
+# Execution Agent
+→ Scraping berhasil (80%)
+→ Error: Beberapa halaman tidak bisa diakses (403)
+→ Retry menggunakan user-agent + timeout adaptif
+
+# Reasoning Agent
+→ Temukan pola umum: "ChatGPT bantu ide, tapi butuh editing"
+→ Gunakan LLM untuk buat ringkasan
+
+# Reporting Agent
+→ Buat PDF: insight, statistik opini, rekomendasi tools
+
+# Error Agent
+→ Deteksi: satu file kosong → log → re-scrape → sukses
+
+Potensi Pengembangan:
+- Plug & Play dengan API eksternal (Twitter, Reddit, arXiv)
+- Masukkan feedback user untuk refinement
+- Agent bisa digunakan untuk use-case lain: riset pasar, competitive analysis, jurnal ilmiah, dll.

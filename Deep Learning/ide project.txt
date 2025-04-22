@@ -1,0 +1,15 @@
+AI Music Generator (LSTM/RNN)
+Generate melodies based on existing patterns
+
+Image Captioning Model
+Combine CNN (feature extraction) + RNN (text generation)
+
+GAN-based Face Aging App
+Tech: StyleGAN / CycleGAN
+Use case: Aging simulation in entertainment or social media
+
+Transformer-based Text Summarizer
+Tech: HuggingFace Transformers + Streamlit demo
+
+Autonomous Vehicle Simulation (Lane Detection + Obstacle Avoidance)
+Tech: OpenCV + CNN + Carla simulator

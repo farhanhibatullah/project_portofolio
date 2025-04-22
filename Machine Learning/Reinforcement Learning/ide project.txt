@@ -1,0 +1,14 @@
+Reinforcement Learning (5 Projects)
+CartPole Game Balancing (OpenAI Gym)
+Deep Q-Learning implementation
+
+Tic-Tac-Toe AI with Q-Learning
+
+Self-learning Snake Game Agent
+
+Stock Trading Agent (Simulated)
+Using DQN or Policy Gradient methods
+
+Grid World Navigation with SARSA and Q-Learning
+Environment design + reward structure visualized
+

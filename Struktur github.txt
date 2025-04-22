@@ -1,0 +1,51 @@
+Umum dan untuk project it
+
+project-name/
+│
+├── data/                  # Dataset mentah atau hasil preprocessing
+│   ├── raw/
+│   └── processed/
+│
+├── notebooks/             # Jupyter notebooks (eksplorasi, eksperimen)
+│
+├── src/                   # Source code utama proyek
+│   ├── __init__.py
+│   ├── data/              # Script ETL, preprocessing
+│   ├── features/          # Feature engineering
+│   ├── models/            # Model training & evaluation
+│   └── visualization/     # Plotting & reporting
+│
+├── configs/               # Config file (YAML, JSON)
+│
+├── tests/                 # Unit tests / integration tests
+│
+├── reports/               # Laporan hasil, grafik, dashboard
+│   └── figures/
+│
+├── requirements.txt       # Python dependencies
+├── environment.yml        # Conda environment (opsional)
+├── .gitignore
+├── README.md
+└── LICENSE
+
+tambahan khusus software engineering
+project-name/
+├── public/                # Aset publik untuk frontend (HTML, JS, image)
+├── app/                   # Aplikasi utama (web, mobile, backend)
+│   ├── api/
+│   ├── services/
+│   └── utils/
+├── docker/                # Dockerfile & docker-compose.yml
+├── .env.example           # Contoh environment variable
+
+tambahan khusus ai engineering/mlops
+project-name/
+├── pipelines/             # ML/DL pipeline (dvc, airflow, prefect, kedro)
+├── models/                # Checkpoint model, artefak
+├── logs/                  # Log training dan evaluasi
+├── registry/              # Model registry lokal
+├── deployment/            # Deployment (FastAPI, Streamlit, Flask)
+│   ├── docker/
+│   ├── app.py
+│   └── gunicorn.conf.py
+

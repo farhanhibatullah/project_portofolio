@@ -1,0 +1,69 @@
+1. [Pemula] Customer Behavior Dashboard (EDA & Visualisasi)
+Deskripsi: Buat dashboard interaktif untuk menganalisis perilaku pelanggan menggunakan dataset e-commerce (misalnya data transaksi Tokopedia/Shopee).
+
+Teknologi: Python, Pandas, Plotly/Dash/Streamlit
+Skill: EDA, statistik deskriptif, data wrangling
+Nilai Tambah: Tambahkan analisis segmentasi pelanggan berbasis RFM atau k-means sederhana.
+
+2. [Pemula] Prediksi Harga Rumah Lokal (ML Supervised Regression)
+Deskripsi: Bangun model prediksi harga rumah berdasarkan data real estate kota lokal (gunakan scraping dari situs properti).
+
+Teknologi: Scikit-learn, XGBoost, Pandas, Seaborn
+Skill: preprocessing, regression, model evaluation
+Nilai Tambah: Buat web mini app menggunakan Streamlit untuk input parameter harga rumah.
+
+3. [Menengah] Deteksi Penipuan Transaksi (Imbalanced Classification)
+Deskripsi: Bangun model klasifikasi untuk mendeteksi transaksi mencurigakan.
+
+Teknologi: SMOTE, LightGBM, sklearn
+Skill: klasifikasi, handling imbalanced data, AUC-ROC
+Nilai Tambah: Tambahkan sistem alert dan dashboard monitoring.
+
+4. [Menengah] Dashboard Interaktif Data COVID + Vaksinasi (Data Integration)
+Deskripsi: Gabungkan berbagai sumber data (API + CSV) dan buat dashboard interaktif.
+
+Teknologi: Streamlit/Dash, Plotly, Pandas
+Skill: data cleaning, API integration, data merging
+Nilai Tambah: Buat fitur simulasi proyeksi vaksinasi berdasarkan input user.
+
+5. [Menengah] Movie Recommendation System (Collaborative Filtering)
+Deskripsi: Bangun sistem rekomendasi film berdasarkan rating pengguna (MovieLens dataset).
+
+Teknologi: Surprise, Scikit-learn, Flask
+Skill: matrix factorization, recommendation system
+Nilai Tambah: Tambahkan tampilan rekomendasi secara real-time lewat web app.
+
+6. [Menengah - Lanjut] Chatbot Review Produk (NLP + Sentiment Analysis)
+Deskripsi: Buat chatbot yang bisa menjawab pertanyaan seputar review produk berdasarkan analisis sentimen.
+
+Teknologi: NLTK/spaCy + FastAPI + HuggingFace
+Skill: text preprocessing, sentiment classification, API
+Nilai Tambah: Integrasikan ke Telegram bot/WhatsApp bot.
+
+7. [Lanjut] OCR KTP dan Validasi Data (Computer Vision + NLP)
+Deskripsi: Bangun aplikasi untuk membaca isi KTP menggunakan OCR dan validasi informasi otomatis.
+
+Teknologi: Tesseract OCR, OpenCV, Regex, spaCy
+Skill: image preprocessing, OCR, entity extraction
+Nilai Tambah: Tambahkan validasi ke database dukcapil dummy.
+
+8. [Lanjut] Real-Time Traffic Detection dan Klasifikasi Kendaraan (CV + YOLOv8)
+Deskripsi: Bangun sistem deteksi kendaraan dari CCTV dan klasifikasikan jenis kendaraan secara real-time.
+
+Teknologi: OpenCV, YOLOv8, DeepSort, Flask
+Skill: object detection, tracking, deployment
+Nilai Tambah: Tambahkan analisis jumlah kendaraan vs waktu (rush hour).
+
+9. [Lanjut] News Summarizer & Topic Modeling (NLP Advanced + LLM)
+Deskripsi: Buat web app yang mengambil berita terbaru, melakukan ringkasan otomatis dan analisis topik tren.
+
+Teknologi: HuggingFace Transformers, LDA, Streamlit
+Skill: text summarization, topic modeling, web scraping
+Nilai Tambah: Tambahkan rekomendasi artikel berdasarkan interest pengguna.
+
+10. [Advanced] Intelligent Stock Trading Agent (Reinforcement Learning)
+Deskripsi: Bangun agent trading yang mengambil keputusan beli/jual saham menggunakan RL (DQN).
+
+Teknologi: TensorFlow/PyTorch, Gym, Alpaca API
+Skill: reinforcement learning, time series, risk evaluation
+Nilai Tambah: Tambahkan strategi diversifikasi otomatis + dashboard evaluasi return.

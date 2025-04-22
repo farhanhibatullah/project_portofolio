@@ -1,0 +1,29 @@
+1. Portfolio Website with Blog CMS
+Tingkat: Pemula
+Stack: HTML, CSS, JavaScript, Netlify CMS
+Fitur: Static blog + contact form
+Nilai Tambah: Mode gelap + animasi scroll reveal
+
+2. E-Commerce Frontend Clone (e.g., Tokopedia UI)
+Tingkat: Menengah
+Stack: React + TailwindCSS + Zustand
+Fitur: Produk listing, filter dinamis, keranjang
+Nilai Tambah: Search fuzzy menggunakan Fuse.js
+
+3. Job Board with Auth & Filtering
+Tingkat: Menengah
+Stack: Next.js 14 (App Router), Prisma, PostgreSQL
+Fitur: Auth, post job, apply job, search
+Nilai Tambah: Admin dashboard untuk analytics job views
+
+4. Real-time Chat App (Signal-like)
+Tingkat: Lanjut
+Stack: React + Node.js + Socket.IO + Redis
+Fitur: Real-time messaging, seen/read status
+Nilai Tambah: Enkripsi end-to-end sederhana (libsodium)
+
+5. AI-Powered SaaS Dashboard Generator
+Tingkat: Advanced
+Stack: Next.js + Langchain + OpenAI API + Supabase
+Fitur: User input prompt → generate dashboard & grafik otomatis
+Nilai Tambah: Chat-style interface + export ke PDF

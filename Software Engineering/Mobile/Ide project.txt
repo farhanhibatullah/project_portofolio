@@ -1,0 +1,13 @@
+Mobile Apps (6 Projects)
+
+Habit Tracker with Calendar Integration
+
+AR Measurement Tool (ARCore/ARKit + Flutter)
+
+AI Voice Diary App (STT + Summarizer)
+
+Personal Finance Manager
+
+Pet Health Tracker with Reminder Alerts
+
+Social Learning App (Video + Notes + Discussion)

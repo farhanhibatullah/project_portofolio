@@ -1,0 +1,39 @@
+list project:
+Python
+20 project beginner
+10 project intermediate
+5 project advanced
+SQL
+20 project beginner
+10 project intermediate
+5 project advanced
+data engineering
+5 project
+data analyst
+5 project
+machine learning
+supervised
+5 project
+unsupervised
+5 project
+reinforcement
+5 project
+data visualization
+10 project
+computer vision
+5 project
+natural language processing
+5 project
+deep learning
+5 project
+software engineering
+20 project (web, mobile, dekstop)
+mlops
+10 project
+ai engineering
+5 project
+cloud computing 
+5 project
+
+Total project
+160 project (taro di github semua)

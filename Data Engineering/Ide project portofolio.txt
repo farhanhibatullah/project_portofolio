@@ -1,0 +1,29 @@
+1. Simple Data Pipeline: CSV → Cleaned DB (ETL Basics)
+Tingkat: Pemula
+Tools: Python (pandas), SQLite/MySQL
+Fokus: ETL manual, cleaning, DB insert
+Nilai Tambah: Logging & auto-email untuk notifikasi success/error.
+
+2. Real-time Data Ingestion & Dashboard (Kafka + Spark Streaming)
+Tingkat: Menengah
+Tools: Apache Kafka, Spark Streaming, PostgreSQL, Grafana
+Fokus: Streaming ETL, time-series dashboard
+Nilai Tambah: Real-time alert saat anomali terjadi.
+
+3. Data Lake Architecture dengan MinIO & Presto
+Tingkat: Menengah
+Tools: MinIO (S3-compatible), Apache Presto, Airflow
+Fokus: Queryable data lake, ETL orchestration
+Nilai Tambah: Skema data audit dan versioning sederhana.
+
+4. IoT Sensor Data ETL Pipeline (Cloud-native)
+Tingkat: Lanjut
+Tools: AWS IoT Core, Kinesis, Lambda, S3, Athena
+Fokus: Serverless ETL, cloud ops
+Nilai Tambah: Auto-schema detection dan sink ke Redshift.
+
+5. Full-stack Data Platform: dbt + Airbyte + Superset
+Tingkat: Lanjut
+Tools: dbt, Airbyte, PostgreSQL, Apache Superset
+Fokus: ELT modern stack
+Nilai Tambah: Modularisasi transformasi dan dokumentasi otomatis (dbt-docs).
