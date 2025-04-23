@@ -2,8 +2,9 @@ from googlesearch import search
 import requests
 import json
 from bs4 import BeautifulSoup
+import os
 
-API_KEY = "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"
+API_KEY = os.getenv('OPENROUTER_API_KEY')
 BASE_URL = "https://openrouter.ai/api/v1/chat/completions"
 
 models = {
