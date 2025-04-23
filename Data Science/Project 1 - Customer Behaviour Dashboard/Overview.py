@@ -1,9 +1,10 @@
 import streamlit as st
+from streamlit_extras.metric_cards import style_metric_cards
 import pandas as pd
 from babel.numbers import format_currency
 import altair as alt
 
-
+st.set_page_config(layout='wide')
 def get_unique_years(df: pd.DataFrame) -> list:
     """Get unique years from the dataset."""
     return df['YearOfTransaction'].unique().tolist()
@@ -20,7 +21,24 @@ def filter_data(df: pd.DataFrame, year: int, month: int, purchase_type: str) -> 
     """Filter the dataset based on year and purchase type."""
     return df[(df['YearOfTransaction'] == year) & (df['MonthOfTransaction'] == month) & (df['PurchaseType'] == purchase_type)]
 
-def get_period_quantity(df: pd.DataFrame) -> pd.DataFrame:
+def get_month_names(month_in_number: int) -> str:
+    mapper = {
+        1:'January',
+        2:'February',
+        3:'March', 
+        4:'April', 
+        5:'May',
+        6:'June', 
+        7:'July', 
+        8:'August',
+        9:'September', 
+        10:'October',
+        11:'November',
+        12:'December'
+    }
+    return mapper[month_in_number]
+
+def get_monthly_period_quantity(df: pd.DataFrame) -> pd.DataFrame:
     """Get the total quantity of orders for each period (year and month). The result dataframe contains columns 'YearOfTransaction', 'MonthOfTransaction', 'TotalQuantity', 'Period', and 'PeriodDate'. The 'Period' column contains a string representation of each period in the format 'MM/YYYY'. The 'PeriodDate' column contains a datetime representation of each period."""
     period_quantity = df.groupby(by=['YearOfTransaction', 'MonthOfTransaction'], observed=True)[['Quantity']].agg({
         'Quantity': 'sum'
@@ -30,6 +48,14 @@ def get_period_quantity(df: pd.DataFrame) -> pd.DataFrame:
     period_quantity['Period'] = period_quantity['MonthOfTransaction'].astype(str).str.zfill(2) + '/' + period_quantity['YearOfTransaction'].astype(str)
     period_quantity['PeriodDate'] = pd.to_datetime(period_quantity['Period'])
     return period_quantity.sort_values(by=['YearOfTransaction', 'MonthOfTransaction'], ascending=True)
+
+def get_weekly_period_quantity(df: pd.DataFrame) -> pd.DataFrame:
+    df['Week'] = ((df['InvoiceDate'].dt.day - 1) // 7 + 1).astype(str)
+    weekly_df = df.groupby('Week', observed=True)['Quantity'].sum().reset_index()
+    weekly_df = weekly_df.rename(columns={'Quantity': 'TotalSales'})
+    weekly_df['Week'] = 'Week ' + weekly_df['Week']
+    return weekly_df
+
 
 def get_period_revenue(df: pd.DataFrame) -> pd.DataFrame:
     """Get the total revenue of orders for each period (year and month). The result dataframe contains columns 'YearOfTransaction', 'MonthOfTransaction', 'Revenue', 'Period', and 'PeriodDate'. The 'Period' column contains a string representation of each period in the format 'MM/YYYY'. The 'PeriodDate' column contains a datetime representation of each period."""
@@ -80,6 +106,69 @@ def get_top_5_country_revenue(df: pd.DataFrame) -> pd.DataFrame:
     top_countries = df.groupby('Country')[['TotalPrice']].sum().sort_values(by='TotalPrice', ascending=False).reset_index().head(5)
     return top_countries
 
+def get_top10_country_by_revenue(df: pd.DataFrame) -> pd.DataFrame:
+    """
+    Menghasilkan 10 negara dengan revenue tertinggi dari dataset yang sudah difilter.
+
+    Params:
+        df : DataFrame yang sudah difilter berdasarkan bulan, tahun, dan purchase type.
+             Harus memiliki kolom 'Country', 'Quantity', dan 'UnitPrice'.
+
+    Return:
+        DataFrame dengan kolom ['Country', 'Revenue'] (Top 10)
+    """
+    df.rename(columns={
+        'TotalPrice':'Revenue'
+    }, inplace=True)
+    
+    top_country = (
+        df.groupby('Country', observed=True)['Revenue']
+        .sum()
+        .reset_index()
+        .sort_values(by='Revenue', ascending=False)
+        .head(10)
+    )
+    return top_country
+
+
+def plot_weekly_sales(weekly_df: pd.DataFrame, month_name: str, purchase_type: str) -> alt.Chart:
+    """
+    Membuat lineplot dengan point highlight untuk data penjualan mingguan.
+    
+    Params:
+        weekly_df     : DataFrame hasil dari get_weekly_period_quantity
+        month_name    : Nama bulan untuk judul chart (misal: 'December')
+        purchase_type : Tipe pembelian untuk subtitle chart ('Retail' atau 'Wholesaling')
+        
+    Return:
+        alt.Chart object
+    """
+    chart = alt.Chart(weekly_df).mark_line(
+        strokeWidth=3,
+        color='green'
+    ).encode(
+        x=alt.X('Week:N', title='Week', sort=['Week 1', 'Week 2', 'Week 3', 'Week 4'], axis=alt.Axis(labelAngle=0)),
+        y=alt.Y('TotalSales:Q', title='Total Sales'),
+        tooltip=['Week:N', 'TotalSales:Q']
+    ) + alt.Chart(weekly_df).mark_point(
+        filled=True,
+        size=100,
+        color='orange'
+    ).encode(
+        x='Week:N',
+        y='TotalSales:Q',
+        tooltip=['Week:N', 'TotalSales:Q']
+    )
+
+    chart = chart.properties(
+        width=400,
+        height=300,
+        title=f"🗓️ Weekly Sales Trends ({month_name}) - {purchase_type}"
+    )
+
+    return chart
+
+
 def get_barplot_using_altair(df: pd.DataFrame, xfield: str, yfield: str, xlabel: str, ylabel: str, main_title: str, color_schemes: str, xtype: str='nominal', ytype: str='quantitative', sorter=None) -> alt.Chart:
     """Get a barplot using Altair.
 
@@ -123,7 +212,7 @@ def get_barplot_using_altair(df: pd.DataFrame, xfield: str, yfield: str, xlabel:
     )
     return chart
 
-def get_lineplot_using_altair(df: pd.DataFrame, xfield: str, yfield: str, xtitle: str, ytitle: str, main_title: str, color_field: str, color_field_title: str, xtype: str='ordinal', ytype: str='quantitative', color_field_type: str='nominal', color_schemes: str='viridis', sorter=None):
+def get_lineplot_using_altair(df: pd.DataFrame, xfield: str, yfield: str, xtitle: str, ytitle: str, main_title: str, color_field: str, color_field_title: str, xtype: str='ordinal', ytype: str='quantitative', color_field_type: str='nominal', color_schemes: str='viridis', sorter=None, x_label_angle: int=0):
     """
     Function to create a lineplot using Altair.
 
@@ -162,7 +251,7 @@ def get_lineplot_using_altair(df: pd.DataFrame, xfield: str, yfield: str, xtitle
         A lineplot using Altair.
     """
     chart = alt.Chart(df).mark_line(point=True).encode(
-        x=alt.X(xfield, type=xtype, sort=sorter, title=xtitle),
+        x=alt.X(xfield, type=xtype, sort=sorter, axis=alt.Axis(labelAngle=x_label_angle), title=xtitle),
         y=alt.Y(yfield, type=ytype, title=ytitle),
         color=alt.Color(color_field, type=color_field_type, title=color_field_title, scale=alt.Scale(scheme=color_schemes)),
         tooltip=[color_field, xfield, yfield]
@@ -173,11 +262,39 @@ def get_lineplot_using_altair(df: pd.DataFrame, xfield: str, yfield: str, xtitle
     )
     return chart
 
+def plot_top10_country_barh(df_top: pd.DataFrame) -> alt.Chart:
+    """
+    Visualisasi barplot horizontal 10 negara penyumbang revenue tertinggi.
+
+    Params:
+        df_top : DataFrame dengan kolom ['Country', 'Revenue']
+
+    Return:
+        alt.Chart object
+    """
+    chart = alt.Chart(df_top).mark_bar(color='#0077b6').encode(
+        x=alt.X('Revenue:Q', title='Total Revenue'),
+        y=alt.Y('Country:N', sort='-x', title='Country'),
+        color=alt.Color('Revenue:Q', scale=alt.Scale(scheme='greens')),
+        tooltip=['Country:N', 'Revenue:Q']
+
+    ).properties(
+        width=500,
+        height=300,
+        title='🌍 Top 10 Countries by Revenue'
+    )
+
+    return chart
+
 def main(df: pd.DataFrame):
     """Main function to render the Streamlit dashboard."""
     st.title("Sales Overview Dashboard ✨")
     st.write("Overview All Insight About All Online Retail Transaction In 2010 Until 2011!")
     st.divider()
+
+    logo_path = 'images/ai-technology.png'
+    # Logo Dashboard
+    st.logo(logo_path, size='large', icon_image=logo_path)
 
     # Sidebar filters
     with st.sidebar:
@@ -192,26 +309,35 @@ def main(df: pd.DataFrame):
 
     # Metrics section
     st.subheader("Key Metrics")
-    col1, col2, col3 = st.columns([1,1,1])
+    col1, col2, col3, col4, col5 = st.columns([1,1,1,1,1], gap='small', vertical_alignment='bottom')
     with col1:
         st.metric(label="Total Transactions", value=len(filtered_data['InvoiceNo'].tolist()) if 'InvoiceNo' in filtered_data else 'N/A')
     with col2:
         st.metric(label="Unique Customers", value=filtered_data['CustomerID'].nunique() if 'CustomerID' in filtered_data else "N/A")
     with col3:
         st.metric(label="Total Country", value=len(filtered_data['Country'].unique().tolist()) if 'Country' in filtered_data else "N/A")
-    col4, col5 = st.columns([1, 2])
     with col4:
         st.metric(label="Unique Product", value=len(filtered_data['Description'].unique().tolist()) if 'Description' in filtered_data else 'N/A')
     with col5:
         st.metric(label="Total Revenue (USD)", value=format_currency(filtered_data['TotalPrice'].sum(), 'USD', locale='en_US') if 'TotalPrice' in filtered_data else "N/A")
+    style_metric_cards(background_color="#133337")
     
     # Display monthly transaction trends
     st.divider()
-    st.subheader("Monthly Transactions Trends 2010 to 2011")
-    period_quantity_data = get_period_quantity(df=df)
-    period_quantity_chart = get_barplot_using_altair(df=period_quantity_data, xfield='Period', yfield='TotalQuantity', xlabel='Transaction Period', ylabel='Total of Quantity', main_title='Total of Transaction Per Month In 2010 to 2011', color_schemes='reds', sorter=period_quantity_data.sort_values(by='PeriodDate')['Period'].tolist())
-    with st.container():
-        st.altair_chart(period_quantity_chart, use_container_width=True)
+    col1, col2 = st.columns([4, 4])
+    with col1:
+        st.subheader("Monthly Transactions Trends 2010 to 2011")
+        monthly_period_quantity_data = get_monthly_period_quantity(df=df)
+        monthly_period_quantity_chart = get_barplot_using_altair(df=monthly_period_quantity_data, xfield='Period', yfield='TotalQuantity', xlabel='Transaction Period', ylabel='Total of Quantity', main_title='Total of Transaction Per Month In 2010 to 2011', color_schemes='reds', sorter=monthly_period_quantity_data.sort_values(by='PeriodDate')['Period'].tolist())
+        with st.container():
+            st.altair_chart(monthly_period_quantity_chart, use_container_width=True)
+
+    with col2:
+        st.subheader(f"Weekly {purchase_type_option} Sales Trend in {get_month_names(month_option)}")
+        weekly_period_quantity_data = get_weekly_period_quantity(df=filtered_data)
+        weekly_period_quantity_chart = plot_weekly_sales(weekly_period_quantity_data, get_month_names(month_option), purchase_type_option)
+        with st.container():
+            st.altair_chart(weekly_period_quantity_chart, use_container_width=True)   
 
     # Display monthly revenue trends
     st.divider()
@@ -239,11 +365,20 @@ def main(df: pd.DataFrame):
 
     # Showing the Top 5 Countries with the Most Revenue 
     st.divider()
-    st.subheader('Top 5 Countries Contributing the Most Revenue from 2010 to 2011')
-    top_country_data = get_top_5_country_revenue(df=df)
-    top_country_chart = get_barplot_using_altair(df=top_country_data, xfield="Country", xtype='nominal', yfield='TotalPrice', ytype='quantitative', sorter='-y', xlabel='Country', ylabel='Total Revenue', color_schemes='blues', main_title='Top 5 Countries by Total Revenue (2010–2011)')
-    with st.container():
-        st.altair_chart(top_country_chart, use_container_width=True)
+    col1, col2 = st.columns([6, 4], gap='medium')
+    with col1:
+        st.subheader('Top 5 Countries Contributing the Most Revenue from 2010 to 2011')
+        top_5_country_data = get_top_5_country_revenue(df=df)
+        top_5_country_chart = get_barplot_using_altair(df=top_5_country_data, xfield="Country", xtype='nominal', yfield='TotalPrice', ytype='quantitative', sorter='-y', xlabel='Country', ylabel='Total Revenue', color_schemes='blues', main_title='Top 5 Countries by Total Revenue (2010–2011)')
+        with st.container():
+            st.altair_chart(top_5_country_chart, use_container_width=True)
+    
+    with col2:
+        st.subheader(f'Top 10 Countries Contributing the Most {purchase_type_option} Revenue In {get_month_names(month_option)}')
+        top_10_country_data = get_top10_country_by_revenue(df=filtered_data)
+        top_10_country_chart = plot_top10_country_barh(df_top=top_10_country_data)
+        with st.container():
+            st.altair_chart(top_10_country_chart, use_container_width=True)
 
     
 
